@@ -1,9 +1,11 @@
 const express = require('express');
-const router = express.Router();
 
 const userController = require('../controllers/user');
+const max = require('../middleware/limiter');
+
+const router = express.Router();
 
 router.post('/signup', userController.signup);
-router.post('/login', userController.login);
+router.post('/login', max.limit, userController.login);
 
 module.exports = router;

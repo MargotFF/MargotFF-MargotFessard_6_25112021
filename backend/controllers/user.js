@@ -1,8 +1,30 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const passwordValidator = require('password-validator');
+const emailValidator = require('email-validator');
+
 const User = require('../models/user');
 
+const passwordSchema = new passwordValidator();
+passwordSchema
+  .is().min(8)
+  .is().max(50)
+  .has().uppercase()
+  .has().lowercase()
+  .has().digits()
+  .has().not().spaces();
+
 exports.signup = (req, res, next) => {
+  // TODO : check if user exists
+
+  if (!emailValidator.validate(req.body.email)){
+    return res.status(400).json({ message: 'The email format is not valid !' });
+  }
+
+  if (!passwordSchema.validate(req.body.password)){
+    return res.status(400).json({ message: 'The password should contain at least 8 characters with at least 1 number, an uppercase and a lowercase, and should not contain any space !' });
+  }
+
   bcrypt.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
@@ -31,7 +53,7 @@ exports.login = (req, res, next) => {
             userId: user._id,
             token: jwt.sign(
               { userId: user._id },
-              'RANDOM_TOKEN_SECRET',
+              process.env.SECRET_TOKEN,
               { expiresIn: '24h' }
             )
           });
