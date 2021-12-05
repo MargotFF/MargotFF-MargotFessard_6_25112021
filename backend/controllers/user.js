@@ -15,7 +15,12 @@ passwordSchema
   .has().not().spaces();
 
 exports.signup = (req, res, next) => {
-  // TODO : check if user exists
+  User.findOne({ email: req.body.email })
+  .then(user => {
+    if (user) {
+      return res.status(400).json({ error });
+    }
+  });
 
   if (!emailValidator.validate(req.body.email)){
     return res.status(400).json({ message: 'The email format is not valid !' });
