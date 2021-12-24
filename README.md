@@ -4,7 +4,7 @@ Construction d'une API sécurisée pour le MVP de __Hot Takes__, une application
 
 ## Installation ##
 
-Il est nécessaire d'installer les dépendances suivantes en local :
+Installer les dépendances suivantes en local :
 - NodeJS 12.14 ou 14.0.
 - Angular CLI 7.0.2.
 - node-sass (veiller à utiliser la version correspondante à NodeJS. Pour Node 14.0 par exemple, la version 4.14+ de node-sass est requise).
