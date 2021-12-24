@@ -4,22 +4,20 @@ Construction d'une API sécurisée pour le MVP de __Hot Takes__, une application
 
 ## Installation ##
 
-Here are the dependancies you need to install:
-- NodeJS 12.14 or 14.0.
+Il est nécessaire d'installer les dépendances suivantes en local :
+- NodeJS 12.14 ou 14.0.
 - Angular CLI 7.0.2.
-- node-sass : make sure to use the corresponding version to NodeJS. For Noe 14.0 for instance, you need node-sass in version 4.14+.
+- node-sass (veiller à utiliser la version correspondante à NodeJS. Pour Node 14.0 par exemple, la version 4.14+ de node-sass est requise).
 
-On Windows, these installations require to use PowerShell in administrator mode.
-
-Then, clone this repo, `run npm install`, and `run npm install --save-dev run-script-os`.
+Ensuite, clôner ce dépôt, `run npm install`, et `run npm install --save-dev run-script-os`.
 
 
-## Usage ##
+## Utilisation ##
 
-Run `npm start`. This should both run the local server and launch your browser.
+Exécuter `npm start` pour lancer le serveur local et lancer l'application sur le navigateur.
 
-If your browser fails to launch, or shows a 404 error, navigate your browser to http://localhost:8080.
+Si le navigateur ne se lance pas ou affiche une erreur 404, se rendre directement sur http://localhost:8080.
 
-The app should reload automatically when you make a change to a file.
+L'application devrait se relancer automatiquement lorsqu'un fichier est modifié.
 
-Use `Ctrl+C` in the terminal to stop the local server.
+Exécuter `Ctrl+C` dans le terminal pour arrêter le serveur local.
