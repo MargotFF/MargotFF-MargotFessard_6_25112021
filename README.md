@@ -1,4 +1,6 @@
-# HOT TAKES #
+# Hot Takes #
+
+Construction d'une API sécurisée pour le MVP de __Hot Takes__, une application web de critique de sauces piquantes développée par la marque de condiments à base de piment __Piiquante__. Cette première version permet aux utilisateurs de télécharger leurs sauces piquantes préférées et de liker ou disliker les sauces que d'autres partagent. Le frontend de l'application a été développé à l'aide d'Angular.
 
 ## Installation ##
 

@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const passwordValidator = require('password-validator');
 const emailValidator = require('email-validator');
 
+require('dotenv').config({ path: '../.env'});
+
 const User = require('../models/user');
 
 const passwordSchema = new passwordValidator();
